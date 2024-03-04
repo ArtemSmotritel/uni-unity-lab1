@@ -12,7 +12,10 @@ public class LevelCompleteEventManager : MonoBehaviour
     {
         if (!this.isFirstCollision)
         {
-            levelCompleteEvent.Invoke();
+            if (levelCompleteEvent is not null)
+            {
+                levelCompleteEvent.Invoke();
+            }
             this.isFirstCollision = true;
         }
     }
